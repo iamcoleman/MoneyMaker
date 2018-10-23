@@ -24,8 +24,8 @@ for query in searchQueries:
     for status in tweepy.Cursor(API.search, q=query).items(10):
         statusText = status.text.lower()
         if all(x in statusText for x in searchQueries):
-            print("bof")
+            print("bof - " + statusText)
         elif "#browns" in statusText:
-            print("#browns")
+            print("#browns - " + statusText)
         elif "#buccaneers" in statusText:
-            print("#buccaneers")
+            print("#buccaneers - " + statusText)
