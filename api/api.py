@@ -1,6 +1,6 @@
 import tweepy
 
-from twitter_keys import getKeys
+from api.twitter_keys import getKeys
 
 def getAPI():
     access_token, access_secret, consumer_key, consumer_secret = getKeys()
