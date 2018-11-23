@@ -1,7 +1,7 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk import tokenize
 
-import nltk
+# import nltk
 # nltk.download('punkt')
 # nltk.download('vader_lexicon')
 
@@ -66,9 +66,13 @@ sentences.extend(tricky_sentences)
 
 sid = SentimentIntensityAnalyzer()
 
+sentencesWithSIA = []
+
 for sentence in sentences:
-    print(sentence)
+    # print(sentence)
     ss = sid.polarity_scores(sentence)
-    for k in sorted(ss):
-        print('{0}: {1}, '.format(k, ss[k]), end='')
-    print()
+    # for k in sorted(ss):
+    #     print('{0}: {1}, '.format(k, ss[k]), end='')
+    # print()
+    sentencesWithSIA.append((sentence, ss))
+    print((sentence, ss))
